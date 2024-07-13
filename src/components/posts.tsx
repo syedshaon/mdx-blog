@@ -2,11 +2,11 @@ import Link from "next/link";
 import { formatDate, getBlogPosts } from "@/app/blog/utils";
 import Image from "next/image";
 
-export function BlogPosts() {
-  let allBlogs = getBlogPosts();
+let allBlogs = getBlogPosts();
 
+export function BlogPosts({ allBlogs }) {
   return (
-    <div>
+    <div className="flex flex-wrap justify-between items-stretch">
       {allBlogs
         .sort((a, b) => {
           if (new Date(a.metadata.date) > new Date(b.metadata.date)) {
@@ -15,15 +15,19 @@ export function BlogPosts() {
           return 1;
         })
         .map((post) => (
-          <Link key={post.slug} className="flex flex-col space-y-1 mb-4" href={`/blog/${post.slug}`}>
-            <div className="w-full flex flex-col   space-x-0 md:space-x-2">
-              <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">{formatDate(post.metadata.date, false)}</p>
-              <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">{post.metadata.title}</p>
+          <Link key={post.slug} className=" w-full lg:w-1/2  border-red-200 border  flex flex-col space-y-1 mb-4" href={`/blog/${post.slug}`}>
+            <div className="p-5 w-full flex flex-col   space-x-0 md:space-x-2">
               {post.metadata.coverImage && (
-                <div className="w-[800px] h-[400px] relative">
+                <div className="w-full h-[300px] mb-7 relative">
                   <Image className="object-cover coverImage" src={`/images/${post.metadata.coverImage}`} fill alt={post.metadata.title} />
                 </div>
               )}
+
+              <p className="text-neutral-900 text-2xl font-bold dark:text-neutral-100 tracking-tight">{post.metadata.title}</p>
+
+              <p className="text-neutral-600 dark:text-neutral-400  tabular-nums text-xs">
+                Posted by {post.metadata.author} on {formatDate(post.metadata.date, false)}
+              </p>
             </div>
           </Link>
         ))}
