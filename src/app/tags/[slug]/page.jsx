@@ -8,8 +8,8 @@ const page = ({ params }) => {
   //   <h1 className="font-semibold text-2xl my-1 tracking-tighter">Posts with {decodeURIComponent(params.slug)} tag. </h1>
 
   return (
-    <section className="max-w-7xl mx-auto ">
-      <h1 className="font-semibold text-2xl my-1 tracking-tighter">Posts with {decodeURIComponent(params.slug)} tag. </h1>
+    <section className="container  my-10 ">
+      <h1 className="font-semibold text-2xl my-1 tracking-tighter">Posts with tag: {decodeURIComponent(params.slug)}. </h1>
       <BlogPosts allBlogs={allBlogs} />
     </section>
   );

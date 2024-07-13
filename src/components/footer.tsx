@@ -1,61 +1,52 @@
-function ArrowIcon() {
-  return (
-    <svg
-      width="12"
-      height="12"
-      viewBox="0 0 12 12"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z"
-        fill="currentColor"
-      />
-    </svg>
-  )
-}
+import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 
-export default function Footer() {
+const Footer = () => {
   return (
-    <footer className="mb-16">
-      <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
-        <li>
-          <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="/rss"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">rss</p>
-          </a>
-        </li>
-        <li>
-          <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://github.com/vercel/next.js"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">github</p>
-          </a>
-        </li>
-        <li>
-          <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://vercel.com/templates/next.js/portfolio-starter-kit"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">view source</p>
-          </a>
-        </li>
-      </ul>
-      <p className="mt-8 text-neutral-600 dark:text-neutral-300">
-        © {new Date().getFullYear()} MIT Licensed
-      </p>
-    </footer>
-  )
-}
+    <div className="bg-gray-300 text-black   p-4 md:p-6">
+      <div className=" container mx-auto ">
+        <div className="flex flex-col items-center gap-4">
+          <p className="text-black text-3xl flex   items-center ">
+            WP<span className="text-lg">2</span>NextJS
+          </p>
+
+          <div className="social text-black">
+            <ul className="flex items-center gap-3">
+              <li>
+                <a aria-label="Facebook" className=" flex justify-center items-center w-[20px] h-[20px] bg-white rounded-full " href="#">
+                  <FaFacebookF className="text-black  text-sm  " />
+                </a>
+              </li>
+              <li>
+                <a aria-label="Twitter" className=" flex justify-center items-center w-[20px] h-[20px] bg-white rounded-full " href="#">
+                  <FaTwitter className="text-black  text-sm    " />
+                </a>
+              </li>
+              <li>
+                <a aria-label="Linkedin" className=" flex justify-center items-center w-[20px] h-[20px] bg-white rounded-full " href="#">
+                  <FaLinkedinIn className="text-black   text-sm   " />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        {/* Second Line */}
+        <div className=" my-10 flex flex-col items-center  ">
+          <h3 className=" text-black p-1 font-bold m-0 mb-2 !inline-block lg:block self-center   ">Contact Us</h3>
+          <p className="text-xs">Email: info@positivus.com</p>
+          <p className="my-2 text-xs">Phone: 555-567-8901</p>
+          <p className="text-xs">Address: 1234 Main St Moonstone City, Stardust State 12345</p>
+        </div>
+        {/* Third Line */}
+        <div className="text-xs  w-full text-center  ">
+          <hr className="h-[2px] bg-white w-full" />
+          <div className=" mt-4 ">
+            <p>© 2023 Positivus. All Rights Reserved.</p>
+            <a href="#">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Footer;

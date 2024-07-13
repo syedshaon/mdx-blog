@@ -6,7 +6,7 @@ let allBlogs = getBlogPosts();
 
 export function BlogPosts({ allBlogs }) {
   return (
-    <div className="flex flex-wrap justify-between items-stretch">
+    <div className="mdxblog flex flex-wrap justify-between items-stretch">
       {allBlogs
         .sort((a, b) => {
           if (new Date(a.metadata.date) > new Date(b.metadata.date)) {
@@ -15,12 +15,14 @@ export function BlogPosts({ allBlogs }) {
           return 1;
         })
         .map((post) => (
-          <Link key={post.slug} className=" w-full lg:w-1/2  border-red-200 border  flex flex-col space-y-1 mb-4" href={`/blog/${post.slug}`}>
+          <Link key={post.slug} className=" w-full lg:w-[47%]  border-gray-300 shadow rounded-md border  flex flex-col space-y-1 m-4" href={`/blog/${post.slug}`}>
             <div className="p-5 w-full flex flex-col   space-x-0 md:space-x-2">
-              {post.metadata.coverImage && (
+              {post.metadata.coverImage ? (
                 <div className="w-full h-[300px] mb-7 relative">
                   <Image className="object-cover coverImage" src={`/images/${post.metadata.coverImage}`} fill alt={post.metadata.title} />
                 </div>
+              ) : (
+                <div className="w-full h-[300px] mb-7 relative bg-gray-200 rounded"></div>
               )}
 
               <p className="text-neutral-900 text-2xl font-bold dark:text-neutral-100 tracking-tight">{post.metadata.title}</p>

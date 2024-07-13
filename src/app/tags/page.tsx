@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <section>
+    <section className="container  my-10">
       <h1 className="font-semibold text-2xl mb-8 tracking-tighter">Tags</h1>
       <Tags />
     </section>

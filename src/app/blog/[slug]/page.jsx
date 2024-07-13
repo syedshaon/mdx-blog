@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { CustomMDX } from "@/components/mdx";
 import { formatDate, getBlogPosts } from "@/app/blog/utils";
+import Link from "next/link";
 
 import { baseUrl } from "@/app/sitemap";
 import Image from "next/image";
@@ -54,7 +55,7 @@ export default function Blog({ params }) {
   }
 
   return (
-    <section>
+    <section className="container my-10">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -75,17 +76,25 @@ export default function Blog({ params }) {
           }),
         }}
       />
-      <h1 className="title font-semibold text-2xl tracking-tighter">{post.metadata.title}</h1>
+      <h1 className="title font-semibold text-2xl text-center tracking-tighter mb-5">{post.metadata.title}</h1>
 
       {post.metadata.coverImage && (
-        <div className="w-[800px] h-[400px] relative">
+        <div className="w-full h-[400px] relative">
           <Image className="object-cover coverImage" src={`/images/${post.metadata.coverImage}`} fill alt={post.metadata.title} />
         </div>
       )}
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">{formatDate(post.metadata.date)}</p>
-      </div>
-      <article className="prose">
+      <p className="text-neutral-600 dark:text-neutral-400  tabular-nums  text-sm text-center mb-2 mt-3">
+        Posted by {post.metadata.author} on {formatDate(post.metadata.date, false)} <span className="w-[40px]"></span>
+      </p>
+      <p className="text-neutral-600 dark:text-neutral-400  tabular-nums text-xs text-center mb-5 ">
+        {post.metadata.tags.split(", ").map((tag, key) => (
+          <Link key={key} className="px-2 border-b border-transparent hover:border-black" href={`/tags/${tag}`}>
+            #{tag} &nbsp;
+          </Link>
+        ))}
+      </p>
+
+      <article className="mdxblog">
         <CustomMDX source={post.content} />
       </article>
     </section>

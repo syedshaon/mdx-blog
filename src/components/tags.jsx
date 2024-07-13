@@ -13,13 +13,11 @@ export function Tags() {
   // console.log(tags);
 
   return (
-    <div>
+    <div className="w-full flex flex-wrap justify-between ">
       {[...new Set(Tags)].map((tag, key) => (
-        <div key={key} className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-          <Link className="flex flex-col space-y-1 mb-4" href={`/tags/${tag}`}>
-            <p className="text-neutral-900 dark:text-neutral-100 tracking-tight  capitalize ">{tag}</p>
-          </Link>
-        </div>
+        <Link key={key} className=" px-10 py-5 m-5 border border-gray-700 text-neutral-900 dark:text-neutral-100 tracking-tight  capitalize" href={`/tags/${tag}`}>
+          {tag}
+        </Link>
       ))}
     </div>
   );

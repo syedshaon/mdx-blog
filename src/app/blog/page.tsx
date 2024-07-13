@@ -10,7 +10,7 @@ export default function Page() {
   let allBlogs = getBlogPosts();
 
   return (
-    <section className="max-w-7xl mx-auto ">
+    <section className="container  my-10 ">
       <h1 className="font-semibold text-2xl mb-8 tracking-tighter">My Blog</h1>
       <BlogPosts allBlogs={allBlogs} />
     </section>

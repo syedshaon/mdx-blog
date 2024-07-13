@@ -15,13 +15,11 @@ export function Categories() {
     <p>No categories found</p>;
   }
   return (
-    <div>
+    <div className="w-full flex flex-wrap justify-between ">
       {[...new Set(Categories)].map((category, key) => (
-        <div key={key} className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-          <Link className="flex flex-col space-y-1 mb-4" href={`/categories/${category}`}>
-            <p className="text-neutral-900 dark:text-neutral-100 tracking-tight  capitalize ">{category}</p>
-          </Link>
-        </div>
+        <Link key={key} className=" px-10 py-5 m-5 border border-gray-700 text-neutral-900 dark:text-neutral-100 tracking-tight  capitalize" href={`/categories/${category}`}>
+          {category}
+        </Link>
       ))}
     </div>
   );
