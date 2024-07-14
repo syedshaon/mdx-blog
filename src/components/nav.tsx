@@ -53,7 +53,7 @@ export function Navbar() {
         </div>
       </div>
       {isOpen && (
-        <div className=" lg:hidden bg-black  fixed top-0 left-0 w-screen h-screen flex justify-center items-center flex-col">
+        <div className=" lg:hidden bg-black  fixed top-0 left-0 w-screen h-screen flex justify-center items-center flex-col z-50">
           <div className="lg:hidden absolute   top-5    right-12">
             <button aria-label="mobile menu" onClick={toggleMenu} className="text-white focus:outline-none">
               {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -63,7 +63,7 @@ export function Navbar() {
 
           {Object.entries(navItems).map(([path, { name }]) => {
             return (
-              <Link key={path} href={path} className="capitalize transition-all block px-4 py-2 text-white border-transparent hover:border-b-white  border-b-2">
+              <Link onClick={toggleMenu} key={path} href={path} className="capitalize transition-all block px-4 py-2 text-white border-transparent hover:border-b-white  border-b-2">
                 {name}
               </Link>
             );

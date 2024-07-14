@@ -37,15 +37,13 @@ const config: Config = {
           width: "100%",
           marginLeft: "auto",
           marginRight: "auto",
-          paddingLeft: "2rem",
-          paddingRight: "2rem",
+          paddingLeft: "1rem",
+          paddingRight: "1rem",
           "@screen sm": {
             maxWidth: "640px",
           },
           "@screen md": {
             maxWidth: "768px",
-            paddingLeft: "100px",
-            paddingRight: "100px",
           },
           "@screen lg": {
             maxWidth: "1280px",
