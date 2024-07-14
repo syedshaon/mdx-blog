@@ -26,6 +26,8 @@ function Items({ currentItems }) {
               <p className="text-neutral-600 dark:text-neutral-400  tabular-nums text-xs">
                 Posted by {post.metadata.author} on {formatDate(post.metadata.date, false)}
               </p>
+
+              <p className="text-neutral-900 text-sm   dark:text-neutral-100 tracking-tight mt-3 text-justify">{post.metadata.excerpt}</p>
             </div>
           </Link>
         ))}
@@ -44,14 +46,14 @@ function Pagination({ itemsPerPage, allBlogs }) {
   // (This could be items from props; or items loaded in a local state
   // from an API endpoint with useEffect and useState)
   const endOffset = itemOffset + itemsPerPage;
-  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+  // console.log(`Loading items from ${itemOffset} to ${endOffset}`);
   const currentItems = allBlogs.slice(itemOffset, endOffset);
   const pageCount = Math.ceil(allBlogs.length / itemsPerPage);
 
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % allBlogs.length;
-    console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
+    // console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
     setItemOffset(newOffset);
   };
 
@@ -62,7 +64,26 @@ function Pagination({ itemsPerPage, allBlogs }) {
       </div>
 
       {/* <ReactPaginate breakLabel="..." nextLabel="next >" onPageChange={handlePageClick} pageRangeDisplayed={5} pageCount={pageCount} previousLabel="< previous" renderOnZeroPageCount={null} /> */}
-      <ReactPaginate nextLabel="next >" onPageChange={handlePageClick} pageRangeDisplayed={3} marginPagesDisplayed={2} pageCount={pageCount} previousLabel="< previous" pageClassName="cursor-pointer page-item   px-4 py-2 flex justify-center items-center bg-gray-400" pageLinkClassName="page-link" previousClassName="page-item cursor-pointer bg-green-500 px-4 py-2" previousLinkClassName="page-link cursor-pointer" nextClassName="page-item cursor-pointer bg-green-500 px-4 py-2" nextLinkClassName="page-link " breakLabel="..." breakClassName="page-item " breakLinkClassName="page-link" containerClassName="pagination flex justify-between bg-gray-300 p-3 rounded-md mt-10" activeClassName="active !bg-green-500   " renderOnZeroPageCount={null} />
+      <ReactPaginate
+        nextLabel="next >"
+        onPageChange={handlePageClick}
+        pageRangeDisplayed={2}
+        marginPagesDisplayed={2}
+        pageCount={pageCount}
+        previousLabel="< previous"
+        pageClassName="rounded-md cursor-pointer page-item   px-4 py-2 flex justify-center items-center bg-gray-400"
+        pageLinkClassName="page-link"
+        previousClassName=" rounded-md page-item cursor-pointer bg-gray-700 text-white px-4 py-2"
+        previousLinkClassName="page-link cursor-pointer"
+        nextClassName="rounded-md page-item cursor-pointer bg-gray-700 text-white px-4 py-2"
+        nextLinkClassName="page-link "
+        breakLabel="... ..."
+        breakClassName="page-item "
+        breakLinkClassName="page-link"
+        containerClassName="pagination flex justify-between bg-gray-300 p-3 rounded-md mt-10"
+        activeClassName="active !bg-gray-700 text-white   "
+        renderOnZeroPageCount={null}
+      />
     </>
   );
 }

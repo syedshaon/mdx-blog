@@ -11,7 +11,7 @@ export default function Page() {
 
   return (
     <section className="container  my-10 ">
-      <h1 className="font-semibold text-2xl mb-8 tracking-tighter">My Blog</h1>
+      <h1 className="font-semibold text-2xl mb-8 tracking-tighter text-center">My Blog</h1>
       <BlogPosts allBlogs={allBlogs} />
     </section>
   );

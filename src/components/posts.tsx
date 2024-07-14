@@ -12,7 +12,7 @@ export function BlogPosts({ allBlogs }) {
     return 1;
   });
 
-  console.log("length: ", SortedBlogs.length);
+  // console.log("length: ", SortedBlogs.length);
   return (
     <>
       {/* <div className="  flex flex-wrap justify-between items-stretch">

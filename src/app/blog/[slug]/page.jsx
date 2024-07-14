@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import { CustomMDX } from "@/components/mdx";
 import { formatDate, getBlogPosts } from "@/app/blog/utils";
 import Link from "next/link";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import YouTube from "@/components/Youtube";
 
 import { baseUrl } from "@/app/sitemap";
 import Image from "next/image";
@@ -95,7 +97,7 @@ export default function Blog({ params }) {
       </p>
 
       <article className="mdxblog">
-        <CustomMDX source={post.content} />
+        <CustomMDX source={post.content} components={{ YouTube }} />
       </article>
     </section>
   );

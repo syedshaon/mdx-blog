@@ -1,5 +1,5 @@
+@import "variables";
 @import "mixins";
-@import "reset";
 
 body,
 html {
@@ -60,11 +60,13 @@ html {
   }
 
   blockquote {
+    border: 1px solid transparent;
     border-left: 4px solid $primary-color;
     background-color: $tertiary-color;
     padding: 8px 10px;
     width: 100%;
     margin: 20px 0;
+    //
 
     p {
       font-style: italic;
@@ -206,5 +208,22 @@ html {
     top: 0;
     color: $primary-color;
     font-size: 1rem;
+  }
+}
+
+.dark .mdxblog {
+  pre {
+    background-color: $text-color;
+    color: #fff;
+    border: 1px solid #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  blockquote {
+    background-color: $text-color;
+    color: #fff;
+    border: 1px solid #fff;
+    border-left: 4px solid $primary-color;
   }
 }

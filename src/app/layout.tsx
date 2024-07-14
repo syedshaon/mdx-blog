@@ -1,7 +1,8 @@
+import Theme from "@/components/Toggle";
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import "@/scss/attriCSS.scss";
+import "@/scss/global.scss";
 
 import { Navbar } from "@/components/nav";
 import Footer from "@/components/footer";
@@ -45,13 +46,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cx("text-black bg-white dark:text-white dark:bg-black", inter.className)}>
-      <body>
-        <main>
-          <Navbar />
-          {children}
-          <Footer />
-        </main>
+    <html lang="en">
+      <body className={cx("text-black bg-white dark:text-white dark:bg-black", inter.className)}>
+        <Theme>
+          <main>
+            <Navbar />
+            <div className="min-h-[80vh]">{children}</div>
+            <Footer />
+          </main>
+        </Theme>
       </body>
     </html>
   );
