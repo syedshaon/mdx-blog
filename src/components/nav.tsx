@@ -32,7 +32,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className=" text-black p-4 md:p-6  bg-gray-300 dark:bg-gray-950 dark:text-gray-50 ">
+    <nav className=" text-black text-sm p-2 md:p-3  bg-gray-300 dark:bg-gray-950 dark:text-gray-50 ">
       <div className="container mx-auto flex justify-between items-center">
         <p className=" text-3xl flex   items-center ">
           WP<span className="text-lg">2</span>NextJS

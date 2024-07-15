@@ -15,6 +15,7 @@ export function BlogPosts({ allBlogs }) {
   // console.log("length: ", SortedBlogs.length);
   return (
     <>
+      {/* MOVED TO PAGINATION */}
       {/* <div className="  flex flex-wrap justify-between items-stretch">
         {allBlogs
           .sort((a, b) => {

@@ -1,8 +1,8 @@
 import { Categories } from "@/components/categories";
 
 export const metadata = {
-  title: "Tags",
-  description: "Tags of my blog.",
+  title: "Categories",
+  description: "Categories of my site.",
 };
 
 export default function Page() {

@@ -13,15 +13,15 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Next.js Portfolio Starter",
-    template: "%s | Next.js Portfolio Starter",
+    default: "WP2NextJS Starter",
+    template: "%s | WP2NextJS Starter",
   },
-  description: "This is my portfolio.",
+  description: "WordPress to NextJS Conversion Starter Package.",
   openGraph: {
-    title: "My Portfolio",
-    description: "This is my portfolio.",
+    title: "P2NextJS Starter",
+    description: "WordPress to NextJS Conversion Starter Package.",
     url: baseUrl,
-    siteName: "My Portfolio",
+    siteName: "P2NextJS Starter",
     locale: "en_US",
     type: "website",
   },
@@ -47,7 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cx("text-black bg-white dark:text-white dark:bg-black", inter.className)}>
+      <body className={cx("text-black bg-white dark:text-white dark:bg-black text-sm ", inter.className)}>
         <Theme>
           <main>
             <Navbar />

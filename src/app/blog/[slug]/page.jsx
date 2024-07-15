@@ -57,7 +57,7 @@ export default function Blog({ params }) {
   }
 
   return (
-    <section className="container my-10">
+    <section className="container my-10 max-w-7xl">
       <script
         type="application/ld+json"
         suppressHydrationWarning

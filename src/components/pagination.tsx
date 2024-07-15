@@ -27,7 +27,7 @@ function Items({ currentItems }) {
                 Posted by {post.metadata.author} on {formatDate(post.metadata.date, false)}
               </p>
 
-              <p className="text-neutral-900 text-sm   dark:text-neutral-100 tracking-tight mt-3 text-justify">{post.metadata.excerpt}</p>
+              <p className="text-neutral-900     dark:text-neutral-100 tracking-tight mt-3 text-justify">{post.metadata.excerpt}</p>
             </div>
           </Link>
         ))}
