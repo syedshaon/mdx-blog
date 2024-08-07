@@ -17,7 +17,7 @@ export function Categories() {
   return (
     <div className="w-full flex flex-wrap justify-between   ">
       {[...new Set(Categories)].map((category, id) => (
-        <TagCatList val={category} href="categories" key={id} />
+        <TagCatList val={category} href="categories" id={id} key={id} />
       ))}
     </div>
   );
