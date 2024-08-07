@@ -14,8 +14,8 @@ export function Tags() {
 
   return (
     <div className="w-full flex flex-wrap justify-between ">
-      {[...new Set(Tags)].map((tag, key) => (
-        <TagCatList val={tag} href="tags" key={key} />
+      {[...new Set(Tags)].map((tag, id) => (
+        <TagCatList val={tag} href="tags" key={id} />
       ))}
     </div>
   );

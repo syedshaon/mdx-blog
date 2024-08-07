@@ -34,9 +34,9 @@ export function Navbar() {
   return (
     <nav className=" text-black text-sm p-2 md:p-3  bg-gray-300 dark:bg-gray-950 dark:text-gray-50 ">
       <div className="container mx-auto flex justify-between items-center">
-        <p className=" text-3xl flex   items-center ">
+        <Link href="/" className=" text-3xl flex   items-center ">
           WP<span className="text-lg">2</span>NextJS
-        </p>
+        </Link>
         <div className="hidden lg:flex lg:items-center space-x-6 ml-auto mr-5">
           {Object.entries(navItems).map(([path, { name }]) => {
             return (
